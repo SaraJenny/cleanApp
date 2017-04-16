@@ -32,7 +32,7 @@ Systemet ska vara uppdelad i två stycken delar:
 - Bra illustrationer.
 - Det som jag saknar lite är lite mer djupgående reflektioner kring säkerhet - det nämns bara som hastigast, i övrigt så är det mycket bra. 
 
-Poängfördelning
+### Poängfördelning
 - Funktionalitet: 4p (av 4)
 - Projektrapport: 3,5p (av 4)
 - Användarbarhet/tillgänglighet: 2p (av 2)
