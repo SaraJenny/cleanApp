@@ -18,3 +18,27 @@ Systemet ska vara uppdelad i två stycken delar:
 - Användare, rum, rapportering etcetera ska lagras i en databas.
 - Inrapporteringsdelen kan antingen vara en vanlig webb-applikation, eller en Android-applikation som bygger på webbteknik och kompilerats till ”app” med hjälp av Cordova/Phonegap.
 
+## Lärarnas omdöme
+- Mycket välgjord, och väl planerad/strukturerad, webbapplikation.
+- Bra att du valt att dela upp det på användare, så att det går att registrera nytt konto och till detta lägga till behöriga användare.
+- Allting är välgjort, och enkelt att använda.
+- Rent och tydligt användargränssnitt.
+- Tillhörande PhoneGap-app för Android, som fungerar väl att ladda ner, installera och testköra mot skapat konto.
+- Överlag är allting ytterst välgjort. Det enda som kunnat höja helheltintrycket lite vore mer information på startsidan, som ger information om vad webbplatsen är för något. Nu säger den ingenting, så det går inte använda denna, om man inte på förväg vet vad det handlar om. "Om"-sidan som nu är lösenordsskyddad hade med fördel kunnat vara publik till exempel.
+- Hade varit bra med lite mer bilder i själva designen också, för att visa på optimering för dessa - du har det för dina rum dock, så den biten finns med på ett litet hörn där.
+- Ser att du tänkt på ovanstående i din rapport, i och med att du velat optimera så långt det gått. Ett mellanting hade varit bra - den publika webbsidan för att locka in användare hade med fördel kunnat vara mer grafisk, medan användargränssnittet som inloggad kunnat vara mer avskalad, då denna är de sidor som laddas frekvent när väl app'en används.
+- Rapporten är mycket välskriven, och tar upp samtliga efterfrågade delar. Bra att du fokuserat mycket på tidigare nämna optimering,
+- Du har gjort en tydlig problemmotivering, och din rapport har en tydlig röd tråd och är både intressant och lättläst.
+- Bra illustrationer.
+- Det som jag saknar lite är lite mer djupgående reflektioner kring säkerhet - det nämns bara som hastigast, i övrigt så är det mycket bra. 
+
+Poängfördelning
+- Funktionalitet: 4p (av 4)
+- Projektrapport: 3,5p (av 4)
+- Användarbarhet/tillgänglighet: 2p (av 2)
+- Navigering: 2p (av 2)
+- Säkerhet: 1,5p (av 2)
+- Optimering: 2p (av 2)
+
+Summa: 15p (av 16)
+- Betyg: A
