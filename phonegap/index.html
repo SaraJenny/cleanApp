@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+* Sara Petersson - Webbutveckling för mobila enheter, DT148G
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: 'unsafe-inline' 'unsafe-eval' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; font-src 'self'; media-src *; img-src * data: 'unsafe-inline'" />
+        <title>CleanApp</title>
+        <link rel="stylesheet" href="css/index.min.css">
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- FontAwsome -->
+        <link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="login-screen">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">CleanApp</div>
+                        <form id="loginForm">
+                            <div class="list-block">
+                                <ul>
+                                    <li class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title label">E-post</div>
+                                            <div class="item-input">
+                                                <input type="email" name="email" id="email" placeholder="E-post">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title label">Lösenord</div>
+                                            <div class="item-input">
+                                                <input type="password" name="password" id="password" placeholder="Lösenord">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="list-block">
+                                <div class="list-block-label"></div>
+                                <ul>
+                                    <li><a href="#" class="item-link list-button" id="loginButton">Logga in</a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar-overlay"></div>
+        <!-- Panels overlay-->
+        <div class="panel-overlay"></div>
+        <!-- Right panel with cover effect-->
+        <div class="panel panel-right panel-cover">
+            <div class="content-block">
+                <p><a href="#" id="logout">Logga ut</a></p>
+                <p><a href="about.html" class="close-panel">Om CleanApp</a></p>
+            </div>
+        </div>
+        <!-- Views, and they are tabs-->
+        <!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
+        <div class="views tabs toolbar-through">
+            <!-- First view -->
+            <div id="view-1" class="view view-main tab active">
+                <div class="navbar">
+                    <div data-page="index-1" class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel">&#9776;</a>
+                        </div>
+                        <div class="center sliding">CleanApp</div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <!-- Page, data-page contains page name-->
+                    <div data-page="index-1" class="page">
+                        <!-- Scrollable page content-->
+                        <div class="page-content">
+                            <!-- Företagsnamn -->
+                            <div class="content-block-title companyName"></div>
+                            <!-- Att-göra-lista -->
+                            <div class="content-block" id="toDo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second view -->
+            <div id="view-2" class="view tab">
+                <div class="navbar">
+                    <div data-page="index-2" class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel">&#9776;</a>
+                        </div>
+                        <div class="center sliding">CleanApp</div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-2" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title companyName"></div>
+                            <!-- Lista med alla rum -->
+                            <div class="content-block" id="allRooms"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Third view -->
+            <div id="view-3" class="view tab">
+                <div class="navbar">
+                    <div data-page="index-3" class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel">&#9776;</a>
+                        </div>
+                        <div class="center sliding">CleanApp</div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-3" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title companyName"></div>
+                            <!-- Användarens profiluppgifter -->
+                            <div class="content-block" id="profile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Tabbar-->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner">
+                    <a href="#view-1" class="tab-link active">
+                        <i class="icon fa fa-calendar-o" aria-hidden="true">
+                            <span id="toDoNumber" class="badge bg-pink"></span>
+                        </i>
+                        <span class="tabbar-label">Att göra</span>
+                    </a>
+                    <a href="#view-2" class="tab-link"> <i class="icon fa fa-list" aria-hidden="true"></i><span class="tabbar-label">Alla rum</span></a>
+                    <a href="#view-3" class="tab-link"> <i class="icon fa fa-user" aria-hidden="true"></i><span class="tabbar-label">Min profil</span></a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- Path to Framework7 Library JS-->
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <!-- Path to your app js-->
+        <script type="text/javascript" src="js/index.min.js"></script>
+    </body>
+</html>
