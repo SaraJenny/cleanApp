@@ -41,4 +41,4 @@ Systemet ska vara uppdelad i två stycken delar:
 - Optimering: 2p (av 2)
 
 Summa: 15p (av 16)
-- Betyg: A
+- BETYG: A
