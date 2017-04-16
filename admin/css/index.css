@@ -1,0 +1,790 @@
+/* Sara Petersson - Webbutveckling för mobila enheter, DT148G */
+
+/*********************
+§RESET
+*********************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, main,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+/*****************************************************************************
+§BASE
+*****************************************************************************/
+
+html {
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Montserrat', 'Roboto', sans-serif;
+	height: 100%;
+	color: #3f3d3a;
+	background-color: #f6f6f6;
+	line-height: 1.5em;
+}
+
+#mainContent {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#mainContent {
+	}
+}
+
+/* Container för sidans huvud-innehåll */
+.mainContainer {
+	max-width: 1100px;
+	margin: 0 auto 2em;
+	overflow: hidden;
+	padding: 0 4%;
+}
+
+/* Om-sidan */
+.box {
+	max-width: 700px;
+	margin: 0 auto 2em;
+	padding: 0 4%;
+}
+
+footer {
+	background-color: #272727;
+	text-align: center;
+	padding: 1em;
+}
+
+/* Mellan */
+@media screen and (min-width: 650px) {
+	footer {
+		padding: 3em;
+	}
+}
+
+/* Döljer element visuellt samtidigt som skärmläsare kan läsa av dem */
+.hidden {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+
+
+
+
+
+
+/*****************************************************************************
+§HEADER
+*****************************************************************************/
+header {
+	background-color: #00bcd4;
+	padding: .8em .5em 1em;
+}
+
+/* Maxi */
+@media screen and (min-width: 1100px) {
+	/* Inre header */
+	#mainHeader {
+		max-width: 1100px;
+		margin: 0 auto;
+		position: relative;
+	}	
+}
+
+/* Logotyp */
+#logo {
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+h1 {
+	font-size: 1.1em;
+}
+
+#logo p {
+	font-size: .8em;
+	font-family: 'Roboto', 'Montserrat', sans-serif;
+	font-style: italic;
+	line-height: 1em;
+}
+
+header a {
+	color: #fff;
+}
+
+header a:hover {
+	text-decoration: none;
+}
+
+
+
+/*****************************************************************************
+§MENY
+*****************************************************************************/
+#toggle-nav {
+	display: none;
+	font-size: 2em;
+	position: absolute;
+	top: .5em;
+	left: .5em;
+}
+
+/* Maxi */
+@media screen and (min-width: 1100px) {
+	#toggle-nav {
+		top: .25em;
+		left: 0%;
+	}	
+}
+
+#mainmenu ul.active {
+	display: none;
+}
+
+#mainmenu ul {
+    width: 100%;
+    position: absolute;
+    top: 3.8em;
+    left: 0;
+	z-index: 1000;
+    background-color:#272727;
+}
+
+#mainmenu ul li {
+    margin: .5em 0;
+    float:none;
+    display:block;
+}
+
+#mainmenu ul li:hover {
+	background-color: #00bcd4;
+}
+
+#mainmenu ul li:active {
+	background-color: #00bcd4;
+}
+
+#mainmenu ul a {
+    display:block;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 2.5% 5%;
+}
+
+/* Maxi */
+@media screen and (min-width: 1100px) {
+	#mainmenu ul a {
+		padding: 1.5% 5%;
+	}	
+}
+
+/* Aktuell sida */
+.current a {
+	background-color: #4d4d4d;
+}
+
+/* Meny för användare som har javascript avaktiverat */
+#mainmenu.js-menu {
+	max-width: 1100px;
+	margin: 2em auto 0;
+}
+#mainmenu.js-menu ul.active {
+	display: block;
+}
+
+#mainmenu.js-menu ul {
+    width: 100%;
+    position: static;
+    background-color: #00bcd4;
+}
+
+#mainmenu.js-menu ul li {
+    margin: 0;
+    display:inline-block;
+    width: 25%;
+    text-align: center;
+}
+
+#mainmenu.js-menu ul li:hover {
+}
+
+#mainmenu.js-menu ul li:active {
+	background-color: #00bcd4;
+}
+
+#mainmenu.js-menu ul a {
+	display: inline-block;
+    padding: 0;
+}
+
+#mainmenu.js-menu ul a:hover {
+	text-decoration: underline;
+}
+
+/* Aktuell sida */
+.js-menu .current a {
+	background-color: #00bcd4;
+	text-decoration: underline;
+}
+
+
+
+
+
+/*****************************************************************************
+§FORMULÄR
+*****************************************************************************/
+form {
+	padding: 0 4% 3%;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	form {
+		padding: 0;
+	}
+}
+
+label {
+	display: block;
+	margin: 1em 0 .2em;
+	font-weight: 700;
+}
+
+/* Tar bort den röda rutan i Firefox */
+	input:required {
+	    box-shadow:none;
+	}
+	input:invalid {
+	    box-shadow:none;
+	}
+
+/* Förhindra chromes gula autofill-bakgrund*/
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #fff inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #3f3d3a;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #fff inset;
+    -webkit-text-fill-color: #3f3d3a;
+}
+
+input, button, .button {
+	font-size: 1em;
+	font-family: 'Montserrat', 'Roboto', sans-serif;
+	border: 1px solid #00bcd4;
+	padding: 3% 2%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 96%;
+}
+
+/* Knappar */
+.button, button {
+	border: none;
+	width: 100%;
+	background-color: #00bcd4;
+	color: #fff;
+	margin-top: 1em;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: #e91e63;
+}
+
+/* Checkbox */
+.statusLabel, .statusLabel+input {
+	display: inline-block;
+}
+
+input[type="checkbox"] {
+	width: auto;
+	margin: 0 0 0 3%;
+	padding: 0;
+	transform: scale(2);
+}
+
+textarea {
+	width: 92%;
+	height: 10em;
+	border: 1px solid #00bcd4;
+	padding: 1em 4%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+/******************************************
+§MAINCONTENT: LOGIN.PHP
+*******************************************/
+#loginContent {
+	background-color: #00bcd4;
+	height: 1000px;
+}
+
+/* Inloggnings- och registreringssidans container */
+.container {
+	min-height: 100%;
+	background-color: #00bcd4;
+}
+
+/* Inloggningsformulär */
+#loginForm {
+	background-color: #fff;
+	padding: 0 4%;
+}
+
+/* Container inom inloggningsformuläret */
+#loginContainer {
+	max-width: 480px;
+	margin: 0 auto;	
+}
+
+#loginForm label {
+	display:inline-block;
+	width: 25%;
+	margin: 0;
+	font-weight: 400;
+}
+
+#loginForm input {
+	margin-left: .5em;
+	border: none;
+	padding: 1em;
+	width: 60%;
+}
+
+/* Container för e-post-fältet */
+#emailContainer {
+	border-bottom: 1px solid #c8c7cc;
+}
+
+/* Inloggningsknapp */
+#loginForm #loginButton {
+	margin-left: 0;
+	background-color: #fff;
+	display: block;
+	margin:  0 auto;
+	color: #00bcd4;
+	cursor: pointer;
+}
+
+#loginForm #loginButton:hover {
+	text-decoration: underline;
+}
+
+/* Registreringslänk */
+#register {
+	color: #fff;
+	font-size: .9em;
+	display: block;
+	text-align: center;
+	padding:  1em;
+}
+
+
+/******************************************
+§MAINCONTENT: INDEX.PHP
+*******************************************/
+/* Lägg till rum-knapp */
+#addRoomFormButton {
+	display: block;
+	text-align: center;
+	width: 96%;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#addRoomFormButton {
+		display: none;
+	}
+}
+
+#addRoomFormButton:hover {
+	text-decoration: none;
+}
+
+/* Sektion med formulär för att lägga till nytt rum */
+#addRoom, #addRoomForm {
+	display: none;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#addRoom {
+		display: block;
+		float: right;
+		width: 50%;
+		margin-left: 10%;
+	}
+
+	#allRooms {
+		float: left;
+		width: 40%;
+	}
+}
+
+/* Information om varje enskilt rum */
+.roomInfo {
+	border-bottom: 1px solid #c8c7cc;
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+.roomInfo a:hover {
+	text-decoration: none;
+}
+
+/* Info-delen av rummet */
+.info {
+	float: left;
+	width: 80%;
+}
+
+/* Ikon-delen av rummet */
+.change {
+	float: left;
+	width: 20%;
+	text-align: right;
+}
+
+
+
+
+
+
+/******************************************
+§MAINCONTENT: ROOM.PHP
+*******************************************/
+/* Stor */
+@media screen and (min-width: 950px) {
+	.mainSection {
+		float: left;
+		width: 58%;
+		margin-right: 10%;
+	}
+
+	aside {
+		float: left;
+		width: 30%;
+		margin-right: 2%;
+	}
+}
+
+
+/* Bilduppladdning */
+.dropzone {
+	width: 88%;
+	min-height: 250px;
+	border: 2px dashed #cfd3d5;
+	color: #cfd3d5;
+	text-align: center;
+	margin: 1.5em auto 0;
+	padding: 2%;
+	position: relative;
+}
+
+/* Då en fil dras över dropzone */
+.dragover {
+	border-color: #ee7300;
+	color: #ee7300;
+}
+
+/* Felmeddelande för uppladdade bilder */
+#uploads {
+	width: 315px;
+	text-align: center;
+	margin: 2% auto 0;
+}
+
+#fileToUpload {
+	border: none;
+}
+
+.dropzone img {
+	max-width: 95%;
+}
+
+.dropzone p {
+	margin-top: 3em;
+}
+
+/* Ladda upp-knapp som är disabled */
+#submitImage.inactive {
+	color: #e2e2e4;
+	background-color: #c8c7cc;
+	cursor: not-allowed;
+}
+
+
+
+
+/******************************************
+§MAINCONTENT: USER.PHP
+*******************************************/
+/* Lägg till användare-knapp */
+#addUserFormButton {
+	display: block;
+	text-align: center;
+	width: 88%;
+	margin: 1em auto 0;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#addUserFormButton {
+		display: none;
+	}
+}
+
+#addUserFormButton:hover {
+	text-decoration: none;
+}
+
+/* Sektion med formulär för att lägga till ny användare */
+#addUser, #addUserForm {
+	display: none;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#addUser {
+		display: block;
+		float: right;
+		width: 55%;
+		margin-left: 10%;
+	}
+}
+
+/* Sektion med alla registrerade användare */
+#allUsers {
+	padding: 0 4%;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	#allUsers {
+		float: left;
+		width: 35%;
+		padding: 0;
+	}
+}
+
+/* Information om varje enskild användare */
+.userInfo {
+	border-bottom: 1px solid #c8c7cc;
+	margin-bottom: 1em;
+	overflow: hidden;
+	position: relative;
+}
+
+.userInfo a:hover {
+	text-decoration: none;
+}
+
+/* Radera-knapp utan JavaScript */
+.no-js-delete {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.no-js {
+	display: block;
+}
+
+
+
+/*****************************************************************************
+§MAINCONTENT: UPDATE.PHP & REGISTER.PHP
+*****************************************************************************/
+/* Formulär */
+#editUserForm, #updatePasswordForm, .registerForm {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+
+
+
+/*****************************************************************************
+§MAINCONTENT: TEXT
+*****************************************************************************/
+h2 {
+	font-size: 1.3em;
+	color: #e91e63;
+	text-align: center;
+	padding: 1em 0 0;
+	font-weight: 700;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	h2 {
+		font-size: 3em;
+		padding: 1em 0;
+	}
+}
+
+h3 {
+	font-size: .9em;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 2em 0 1em;
+	font-weight: 700;
+	color: #e91e63;
+}
+
+/* Stor */
+@media screen and (min-width: 950px) {
+	h3 {
+		font-size: 1.3em;
+	}
+}
+
+h4 {
+	font-weight: 700;
+}
+
+h2+p {
+	margin-top: 1em;
+}
+
+p+p {
+	margin-top: 1em;
+}
+
+.info p+p {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #00bcd4;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+li {
+	line-height: 1.7em;
+}
+
+/* Meddelande */
+.successMessage {
+	background-color: rgba(76, 175, 80, .4);
+	text-align: center;
+	width: 96%;
+	padding: 1em 2%;
+}
+
+/* Felmeddelande */
+.errorMessageBox {
+	margin-top: .3em;
+	color: #f44336;
+	font-size: .9em;
+	text-align: center;
+}
+
+/* Status */
+.clean {
+	color: #4caf50;
+}
+
+.notClean {
+	color: #f44336;
+}
+
+.center {
+	text-align: center;
+}
+
+
+
+/******************************************
+§IKONER
+*******************************************/
+#allRooms i, #deleteImageButton i, #allUsers i {
+	font-size: 2em;
+}
+
+/* Radera-ikon */
+.delete {
+	color: #f44336;
+}
+
+/* Radera-ikon på room.php */
+#deleteImageButton i {
+	position: absolute;
+	bottom: .5em;
+	right: .5em;
+}
